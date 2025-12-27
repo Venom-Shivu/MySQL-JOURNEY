@@ -57,4 +57,4 @@ This directory contains the core practical implementation of the course. It is s
 *   🔗 GitHub: [Venom-Shivu](https://github.com/Venom-Shivu/MySQL-JOURNEY/blob/main/SQL-Code/)
 *   💼 LinkedIn: [Shivansh Yadav](https://www.linkedin.com/in/the-venom)
 
-> *"Talk is cheap. Show me the code."* - Linus Torvalds 💻
+> *"You provide the logic. I provide the FORCE. Together, we will crush every request until the server screams for mercy. 🤝🖤 ."* — Venom (Shivansh Yadav)💻
