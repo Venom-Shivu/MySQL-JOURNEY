@@ -99,6 +99,18 @@ This structure supports **team collaboration, testing, and scalability**.
 
 ---
 
+## ⚙️ How to Run Manually
+
+Since these are dbt-style models (pure `SELECT` logic), the scripts do not include a `USE` statement.
+
+**To run them in MySQL Workbench / DBeaver:**
+1.  Run `USE venomsql;` in your query tab first.
+2.  Execute the model script.
+
+*If you see "Error: No database selected", you skipped step 1!*
+
+---
+
 ## Interview Questions (Analytics Engineer Focus)
 
 **Q1. How is this different from ad-hoc SQL?**  
@@ -139,4 +151,3 @@ GitHub: [https://github.com/Venom-Shivu](https://github.com/Venom-Shivu)
 *Designed to reflect real-world analytics engineering workflows — not isolated SQL scripts.*
 
 ---
-
