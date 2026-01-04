@@ -1,6 +1,4 @@
 
-
-```md
 # 📊 VenomSQL Corp – Executive Analytics Dashboard
 
 ![Banner](https://copilot.microsoft.com/th/id/BCO.89f81e52-1c24-4ace-810b-938f319c23fc.png)
@@ -19,7 +17,7 @@ This is not ad-hoc querying — it mirrors how analytics engineers build **maint
 Prepare and standardize raw source data:
 - Column renaming and type normalization  
 - Basic filtering  
-- JSON field extraction 
+- JSON field extraction  
 
 ---
 
@@ -77,7 +75,6 @@ Each use case maps directly to a **mart-level analytical model**.
 ## Project Structure (dbt-style)
 
 ```
-
 models/
 ├── staging/
 │   ├── stg_users.sql
@@ -88,10 +85,9 @@ models/
 │   ├── int_salary_rankings.sql
 │   └── int_referral_network.sql
 └── marts/
-├── fct_city_user_density.sql
-├── fct_salary_equity.sql
-└── dim_referrals.sql
-
+    ├── fct_city_user_density.sql
+    ├── fct_salary_equity.sql
+    └── dim_referrals.sql
 ```
 
 This structure supports **team collaboration, testing, and scalability**.
@@ -123,7 +119,7 @@ A: Clear model separation, test coverage, and performance-aware design.
 - SQL performance optimization  
 - Window functions & JSON querying  
 - BI-ready analytics design  
-- Analytics engineering best practices  
+- Analytics engineering best practices
 
 ---
 
@@ -131,12 +127,11 @@ A: Clear model separation, test coverage, and performance-aware design.
 
 **Shivansh Yadav**  
 Aspiring Analytics Engineer | SQL • dbt • Python • Data Analytics  
-GitHub: https://github.com/Venom-Shivu
+GitHub: [https://github.com/Venom-Shivu](https://github.com/Venom-Shivu)
 
 ---
 
 *Designed to reflect real-world analytics engineering workflows — not isolated SQL scripts.*
-```
 
 ---
 
