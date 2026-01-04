@@ -1,7 +1,7 @@
 
 # 📊 VenomSQL Corp – Executive Analytics Dashboard
 
-![Banner](https://copilot.microsoft.com/th/id/BCO.89f81e52-1c24-4ace-810b-938f319c23fc.png)
+![VenomSQL Analytics Banner](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80)
 
 ## Overview
 This project showcases **analytics-engineering–grade SQL** aligned with modern **dbt-style data modeling**.  
@@ -74,7 +74,7 @@ Each use case maps directly to a **mart-level analytical model**.
 
 ## Project Structure (dbt-style)
 
-```
+
 models/
 ├── staging/
 │   ├── stg_users.sql
@@ -88,7 +88,7 @@ models/
     ├── fct_city_user_density.sql
     ├── fct_salary_equity.sql
     └── dim_referrals.sql
-```
+
 
 This structure supports **team collaboration, testing, and scalability**.
 
