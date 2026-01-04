@@ -36,8 +36,6 @@ This directory contains the core practical implementation of the course. It is s
 ### 🔵 Phase 4: Professional Skills & Final Project
 *   **`15_delete_vs_truncate_vs_drop.sql`** - Detailed comparison of deletion methods.
 *   **`16_backup_restore.sql`** - Strategies for data backup and recovery.
-*   **`17_final_project.sql`** - **The Final Boss**: A comprehensive challenge combining all learned skills.
-*   **`17_final_project_solution.sql`** - Reference solution for the final project.
 
 ---
 
@@ -51,7 +49,7 @@ This directory contains the core practical implementation of the course. It is s
 
 ## 👤 Author
 
-**Shivansh Yadav (Venom)**
+**Shivansh Yadav**
 
 *   📧 Email: mrshivusinghyadav@gmail.com
 *   🔗 GitHub: [Venom-Shivu](https://github.com/Venom-Shivu/MySQL-JOURNEY/blob/main/SQL-Code/)

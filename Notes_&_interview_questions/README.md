@@ -54,7 +54,7 @@ This folder contains a curated collection of study materials, handwritten notes,
 
 ## 👤 Author
 
-**Shivansh Yadav (Venom)**
+**Shivansh Yadav**
 
 *   📧 Email: mrshivusinghyadav@gmail.com
 *   🔗 GitHub: Venom-Shivu

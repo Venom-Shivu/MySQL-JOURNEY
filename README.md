@@ -8,7 +8,7 @@ Whether you are a beginner or looking to brush up on advanced concepts, this rep
 
 ## 👤 Author
 
-**Shivansh Yadav (Venom)**
+**Shivansh Yadav**
 *   📧 Email: mrshivusinghyadav@gmail.com
 *   🔗 GitHub: [https://github.com/Venom-Shivu/MySQL-JOURNEY](https://github.com/Venom-Shivu/MySQL-JOURNEY)
 *   💼 LinkedIn: [www.linkedin.com/in/the-venom](https://www.linkedin.com/in/the-venom)
@@ -19,7 +19,8 @@ Whether you are a beginner or looking to brush up on advanced concepts, this rep
 
 To keep the project organized, content is separated into folders:
 *   **`SQL-Code/`**: Contains all the source code and scripts.
-*   **`Notes/`**: Contains study materials and interview resources.
+*   **`Notes_&_interview_questions/`**: Contains study materials and interview resources.
+*   **`Project/`**: Contains the **VenomSQL Corp – Executive Analytics Dashboard**, a dbt-style analytics engineering project.
 
 ---
 
@@ -58,6 +59,16 @@ To keep the project organized, content is separated into folders:
     *   **Phase 3 & 4**: Computer-written PDF summaries for advanced topics.
     *   **Interview_questions.docx**: Common SQL interview questions and answers.
 
+## 📊 Project: Executive Analytics Dashboard (Located in `Project/`)
+
+A production-ready analytics project demonstrating **Analytics Engineering** best practices:
+*   **dbt-style Data Modeling**: Organized into Staging (`stg_*`), Intermediate (`int_*`), and Mart (`fct_*`, `dim_*`) layers.
+*   **Performance Engineering**: Optimized with index strategies and materialized views for high-performance BI.
+*   **Real-World Use Cases**:
+    *   📍 City-level user density analysis.
+    *   💰 Salary & equity audits.
+    *   🔗 Referral network mapping.
+
 ---
 
 ## 🛠️ How to Use
@@ -88,6 +99,6 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 This project is licensed under the **MIT License**.
 
-Copyright © 2024 **Shivansh Yadav (Venom)**.
+Copyright © 2025 **Shivansh Yadav**.
 
-You are free to use, modify, and distribute this code. See the [LICENSE](LICENSE.md) file for details.
+You are free to use, modify, and distribute this code. See the [LICENSE](LICENSE) file for details.
