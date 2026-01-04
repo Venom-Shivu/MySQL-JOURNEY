@@ -1,15 +1,19 @@
 /* ============================================================
-   SOLUTION 1: Geographic Expansion Analysis
-   ============================================================
-   Identifies top cities with the highest number of users.
-*/
+   MySQL WORKBENCH – ANALYTICS & PERFORMANCE SCRIPT
+   Compatible with MySQL 8.0+
+   ============================================================ */
 
+
+/* ============================================================
+   1. GEOGRAPHIC EXPANSION ANALYSIS
+   Purpose: Identify top 3 cities by user count
+   ============================================================ */
 SELECT
-    a.city   AS city,
-    a.state  AS state,
+    a.city,
+    a.state,
     COUNT(u.id) AS total_users
 FROM users u
-INNER JOIN addresses a
+JOIN addresses a
     ON u.id = a.user_id
 GROUP BY
     a.city,
@@ -20,11 +24,10 @@ LIMIT 3;
 
 
 /* ============================================================
-   SOLUTION 2: Compensation & Equity Audit
-   ============================================================
-   Finds the second-highest salary within each gender group.
-*/
-
+   2. COMPENSATION & EQUITY AUDIT
+   Purpose: Find 2nd highest salary per gender
+   Uses DENSE_RANK to handle salary ties correctly
+   ============================================================ */
 WITH salary_ranking AS (
     SELECT
         name,
@@ -39,107 +42,93 @@ WITH salary_ranking AS (
 SELECT
     name,
     gender,
-    salary,
-    salary_rank
+    salary
 FROM salary_ranking
 WHERE salary_rank = 2;
 
 
 /* ============================================================
-   SOLUTION 3: UI Preference Analysis (JSON)
-   ============================================================
-   Extracts users who explicitly enabled Dark Mode.
-*/
-
+   3. UI PREFERENCE ANALYSIS (JSON)
+   Purpose: Users who explicitly enabled Dark Mode
+   MySQL JSON syntax (NOT PostgreSQL)
+   ============================================================ */
 SELECT
     u.name,
-    p.settings ->> '$.theme' AS theme
+    JSON_UNQUOTE(JSON_EXTRACT(p.settings, '$.theme')) AS theme
 FROM users u
-INNER JOIN user_preferences p
+JOIN user_preferences p
     ON u.id = p.user_id
-WHERE p.settings ->> '$.theme' = 'dark';
+WHERE JSON_EXTRACT(p.settings, '$.theme') = 'dark';
 
 
 /* ============================================================
-   SOLUTION 4: Internal Referral Network Mapping
-   ============================================================
-   Displays employees and their respective referrers.
-*/
-
+   4. INTERNAL REFERRAL NETWORK
+   Purpose: Map employees to their referrers
+   Self-join on users table
+   ============================================================ */
 SELECT
     u.name AS employee,
     r.name AS referred_by
 FROM users u
-INNER JOIN users r
+JOIN users r
     ON u.referred_by_id = r.id;
 
 
 /* ============================================================
-   SOLUTION 5: BASELINE PERFORMANCE ANALYSIS (NO INDEXES)
-   ============================================================
-   Captures execution plan before optimization.
-*/
-
-EXPLAIN ANALYZE
+   5. BASELINE QUERY PLAN (NO INDEXES)
+   Purpose: Capture optimizer plan before tuning
+   ============================================================ */
+EXPLAIN
 SELECT
     a.city,
     COUNT(u.id)
 FROM users u
-INNER JOIN addresses a
+JOIN addresses a
     ON u.id = a.user_id
 GROUP BY
     a.city;
 
 
 /* ============================================================
-   INDEX STRATEGY
-   ============================================================
-   Optimizes joins and aggregation performance.
-*/
-
--- Foreign key join optimization
+   6. INDEX STRATEGY
+   Purpose: Optimize joins and aggregations
+   ============================================================ */
 CREATE INDEX idx_addresses_user_id
 ON addresses(user_id);
 
--- Aggregation optimization
 CREATE INDEX idx_addresses_city
 ON addresses(city);
 
--- Optional composite index for city + state queries
 CREATE INDEX idx_addresses_city_state
 ON addresses(city, state);
 
 
 /* ============================================================
-   PERFORMANCE ANALYSIS AFTER INDEXING
-   ============================================================
-   Validates reduced cost and improved execution plan.
-*/
-
-EXPLAIN ANALYZE
+   7. QUERY PLAN AFTER INDEXING
+   Purpose: Validate optimizer improvements
+   ============================================================ */
+EXPLAIN
 SELECT
     a.city,
     COUNT(u.id)
 FROM users u
-INNER JOIN addresses a
+JOIN addresses a
     ON u.id = a.user_id
 GROUP BY
     a.city;
 
 
 /* ============================================================
-   MATERIALIZED VIEW: City-Level User Density
-   ============================================================
-   Used for executive dashboards and heavy read workloads.
-*/
-
-CREATE MATERIALIZED VIEW mv_city_user_density AS
+   8. PRECOMPUTED TABLE (Materialized View Alternative)
+   Purpose: Fast city-level analytics for dashboards
+   ============================================================ */
+CREATE TABLE mv_city_user_density AS
 SELECT
     a.city,
     a.state,
     COUNT(u.id) AS total_users
 FROM users u
-INNER JOIN addresses a
+JOIN addresses a
     ON u.id = a.user_id
 GROUP BY
     a.city,
@@ -147,10 +136,8 @@ GROUP BY
 
 
 /* ============================================================
-   QUERY USING MATERIALIZED VIEW
-   ============================================================
-*/
-
+   9. QUERY PRECOMPUTED CITY DATA
+   ============================================================ */
 SELECT
     city,
     state,
@@ -162,12 +149,10 @@ LIMIT 3;
 
 
 /* ============================================================
-   MATERIALIZED VIEW: Salary Ranking Snapshot
-   ============================================================
-   Avoids repeated window function computation.
-*/
-
-CREATE MATERIALIZED VIEW mv_salary_rankings AS
+   10. PRECOMPUTED SALARY RANKINGS
+   Purpose: Avoid repeated window function execution
+   ============================================================ */
+CREATE TABLE mv_salary_rankings AS
 SELECT
     name,
     gender,
@@ -180,10 +165,8 @@ FROM users;
 
 
 /* ============================================================
-   QUERY USING MATERIALIZED VIEW
-   ============================================================
-*/
-
+   11. QUERY PRECOMPUTED SALARY DATA
+   ============================================================ */
 SELECT
     name,
     gender,
@@ -193,10 +176,36 @@ WHERE salary_rank = 2;
 
 
 /* ============================================================
-   MATERIALIZED VIEW REFRESH
-   ============================================================
-   Execute after bulk inserts or scheduled updates.
-*/
+   12. REFRESH LOGIC (MANUAL)
+   Purpose: Rebuild precomputed tables after data changes
+   ============================================================ */
+TRUNCATE TABLE mv_city_user_density;
 
-REFRESH MATERIALIZED VIEW mv_city_user_density;
-REFRESH MATERIALIZED VIEW mv_salary_rankings;
+INSERT INTO mv_city_user_density
+SELECT
+    a.city,
+    a.state,
+    COUNT(u.id)
+FROM users u
+JOIN addresses a
+    ON u.id = a.user_id
+GROUP BY
+    a.city,
+    a.state;
+
+
+TRUNCATE TABLE mv_salary_rankings;
+
+INSERT INTO mv_salary_rankings
+SELECT
+    name,
+    gender,
+    salary,
+    DENSE_RANK() OVER (
+        PARTITION BY gender
+        ORDER BY salary DESC
+    ) AS salary_rank
+FROM users;
+/* ============================================================
+   END OF SCRIPT
+   ============================================================ */
