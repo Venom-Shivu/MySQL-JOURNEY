@@ -36,6 +36,7 @@ This directory contains the core practical implementation of the course. It is s
 ### 🔵 Phase 4: Professional Skills & Final Project
 *   **`15_delete_vs_truncate_vs_drop.sql`** - Detailed comparison of deletion methods.
 *   **`16_backup_restore.sql`** - Strategies for data backup and recovery.
+*   **`17_bulk_user_preferences.sql`** - Generates 500+ users and JSON preference data for testing.
 
 ---
 
