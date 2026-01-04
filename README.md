@@ -50,8 +50,6 @@ To keep the project organized, content is separated into folders:
 ### 🔵 Phase 4: Professional Skills & Extras
 *   **15_delete_vs_truncate_vs_drop.sql** - Critical interview concepts explained.
 *   **16_backup_restore.sql** - Logical (`mysqldump`) vs Physical backups.
-*   **17_final_project.sql** - **The Final Boss**: A comprehensive challenge testing all skills.
-*   **17_final_project_solution.sql** - Solutions for the final project challenge.
 
 ### 📂 Study Notes
 *   **Notes/** - Contains study materials:
