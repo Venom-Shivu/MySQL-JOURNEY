@@ -1,7 +1,11 @@
 
 # 📊 VenomSQL Corp – Executive Analytics Dashboard
 
-![VenomSQL Banner](https://drive.google.com/file/d/17evTZqsVEZADcmzh_w-7yjZXE8MCAZI9/view?usp=sharing)
+<p align="center">
+  <a href="https://github.com/Venom-Shivu">
+    <img src="https://img.shields.io/badge/VenomSQL%20Corp-Executive%20Analytics%20Dashboard-1E3A8A?style=for-the-badge&logo=postgresql&logoColor=white" alt="VenomSQL Banner">
+  </a>
+</p>
 
 
 ## Overview
