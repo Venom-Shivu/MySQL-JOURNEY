@@ -1,7 +1,7 @@
 
 # 📊 VenomSQL Corp – Executive Analytics Dashboard
 
-[![VenomSQL Banner](https://drive.google.com/file/d/17evTZqsVEZADcmzh_w-7yjZXE8MCAZI9/view?usp=sharing)
+![VenomSQL Banner](https://drive.google.com/file/d/17evTZqsVEZADcmzh_w-7yjZXE8MCAZI9/view?usp=sharing)
 
 
 ## Overview
