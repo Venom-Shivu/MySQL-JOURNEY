@@ -48,7 +48,7 @@ This folder contains a curated collection of study materials, handwritten notes,
 
 1.  **Follow the Code:** These notes follow the structure of the SQL scripts in the parent directory.
 2.  **Review before Coding:** It is recommended to read the summary for a phase before attempting the challenges in the `SQL-Code` folder.
-3.  **Interview Cram:** Use the `Interview_questions.docx` for last-minute revision.
+3.  **Interview Cram:** Use the `Interview_questions.pdf` for last-minute revision.
 
 ---
 

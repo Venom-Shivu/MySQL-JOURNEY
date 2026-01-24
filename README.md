@@ -57,18 +57,6 @@ To keep the project organized, content is separated into folders:
     *   **Phase 3 & 4**: Computer-written PDF summaries for advanced topics.
     *   **Interview_questions.docx**: Common SQL interview questions and answers.
 
-## 📊 Project: Executive Analytics Dashboard (Located in `Project/`)
-
-A production-ready analytics project demonstrating **Analytics Engineering** best practices:
-*   **dbt-style Data Modeling**: Organized into Staging (`stg_*`), Intermediate (`int_*`), and Mart (`fct_*`, `dim_*`) layers.
-*   **Performance Engineering**: Optimized with index strategies and materialized views for high-performance BI.
-*   **Real-World Use Cases**:
-    *   📍 City-level user density analysis.
-    *   💰 Salary & equity audits.
-    *   🔗 Referral network mapping.
-
----
-
 ## 🛠️ How to Use
 
 ### 1. Clone the Repository
