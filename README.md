@@ -20,7 +20,6 @@ Whether you are a beginner or looking to brush up on advanced concepts, this rep
 To keep the project organized, content is separated into folders:
 *   **`SQL-Code/`**: Contains all the source code and scripts.
 *   **`Notes_&_interview_questions/`**: Contains study materials and interview resources.
-*   **`Project/`**: Contains the **VenomSQL Corp – Executive Analytics Dashboard**, a dbt-style analytics engineering project.
 
 ---
 
