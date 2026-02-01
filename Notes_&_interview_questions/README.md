@@ -34,7 +34,7 @@ This folder contains a curated collection of study materials, handwritten notes,
 *   *Deep dives into complex topics with syntax examples and performance tips.*
 
 ### 💼 Interview Preparation
-*   **File:** `Interview_questions.docx`
+*   **File:** `Interview_questions.pdf`
 *   **Description:** A comprehensive list of frequently asked SQL interview questions ranging from beginner to expert levels.
 *   **Key Concepts:**
     *   `DELETE` vs `TRUNCATE` vs `DROP`
